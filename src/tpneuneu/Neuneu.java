@@ -26,6 +26,7 @@ public abstract class Neuneu implements Mangeable{
   public abstract void seDeplacer();
 
   public void majPresence(Case c) {
+      c.listPresence.add((Mangeable)this);
   }
 
   public void newOperation() {
@@ -35,6 +36,7 @@ public abstract class Neuneu implements Mangeable{
   }
 
   public void plusProcheNourriture() {
+      
   }
 
 }
