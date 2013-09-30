@@ -30,7 +30,7 @@ public abstract class Neuneu extends Mangeable{
      * 
      * @param repas repas à manger
      */
-    /*
+    
   public void manger(Mangeable repas) {
       if (repas instanceof Neuneu) { //if eat a Neuneu
           repas.setNiveau(0);
@@ -46,7 +46,7 @@ public abstract class Neuneu extends Mangeable{
                 this.setNiveau(this.niveau+repas.niveau);
           }
       }
-  }*/
+  }
 
   public void seReproduire() {
   }
