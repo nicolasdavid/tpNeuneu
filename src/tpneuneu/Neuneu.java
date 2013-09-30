@@ -12,7 +12,7 @@ public abstract class Neuneu implements Mangeable{
 
   public int posY;
 
-  protected static int nameId=1;
+  protected static int nameId=-1;
 
   public void setNiveau(int i) {
   }
