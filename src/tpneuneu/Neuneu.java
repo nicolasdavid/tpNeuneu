@@ -28,14 +28,14 @@ public abstract class Neuneu implements Mangeable{
           this.setNiveau(100); //set energie of neuneu eaten to 0 (as dead) and to 100 for the eater
       }
       else{ //if eat a nourriture
-          int niveauRestantNourriture = repas.niveau-this.niveau;
-          if(niveauRestantNourriture<0){
-                repas.setNiveau(0); //no more nourriture
-                this.setNiveau(??); //TODO pas bon vca
+          
+          if(repas.niveau+this.niveau>100){
+                repas.setNiveau(100-repas.niveau+this.niveau); //set new niveau
+                this.setNiveau(100); //Neuneu has full energy
           }
           else{
-                repas.setNiveau(niveauRestantNourriture);
-                this.setNiveau(this.niveau+niveauRestantNourriture);
+                repas.setNiveau(0); //no more food
+                this.setNiveau(this.niveau+repas.niveau);
           }
       }
   }
