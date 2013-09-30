@@ -13,6 +13,7 @@ public class Loft {
   public LinkedList<Neuneu> population;
 
   
+  
   //constructeur
   public Loft(int a, int b){
       
@@ -23,6 +24,7 @@ public class Loft {
       for (int k=0;k<a;k++){
           for(int l=0; l<b; l++){
               int qte = (int)(Math.random()*(10+1)+(-1)); 
+              Mangeable n = null;
               /**
               * si vaut -1 ==> c'est un neuneu            
               * si vaut 0 ==> pas de case
@@ -39,24 +41,28 @@ public class Loft {
                         */
                         switch(type){
                             case 0 :
-                                Erratique e = new Erratique(k,l);
+                                n = new Erratique(k,l);
                                 break;
                             case 1 :
-                                Vorace v = new Vorace(k,l);
+                                n = new Vorace(k,l);
                                 break;
                             case 2 :
-                                Cannibale c = new Cannibale(k,l);
+                                n = new Cannibale(k,l);
                                 break;
                             default:
-                                Lapin l = new Lapin(k,l);
+                                n = new Lapin(k,l);
                                 break;
                         }
+                      
                       break;
                   case 0 :
                       break;
                   default :
-                      break;
+                      n = new Nourriture(qte);
+                      break;                                 
               }
+              
+              Case c = new Case(n);
           }
       }
   }

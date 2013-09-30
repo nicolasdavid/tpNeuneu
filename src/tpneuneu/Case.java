@@ -8,8 +8,9 @@ public class Case {
   
   
   //constructeur
-  public Case(){
+  public Case(Mangeable n){
       this.listPresence = new LinkedList<>();
+      this.listPresence.add(n);
   }
 
 }
