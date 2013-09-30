@@ -4,7 +4,7 @@ public abstract class Neuneu implements Mangeable{
 
   protected String name;
 
-  protected String sexe;
+  protected int sexe;
 
   protected int niveau;
 
@@ -12,6 +12,7 @@ public abstract class Neuneu implements Mangeable{
 
   public int posY;
 
+  protected static int nameId=1;
 
   public void setNiveau(int i) {
   }
