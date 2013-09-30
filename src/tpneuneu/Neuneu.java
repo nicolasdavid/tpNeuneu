@@ -67,8 +67,19 @@ public abstract class Neuneu implements Mangeable{
       } while (true);
   }
 
-  public Nourriture plusProcheNourriture() {
+  public Nourriture plusProcheNourriture(Loft loft) {
+      int i=0;
       
+      do { 
+          for (int m=-1; m<=1; m+=2){
+              for (int n=-1; n<=1; n=+2){
+                    for (Mangeable element : loft.plateau[this.posX+i*m][this.posY+i*n].listPresence)
+                          if(element instanceof Nourriture) {
+                              return (Nourriture) element;
+                          }
+              }
+          }
+      } while (true);
   }
 
 }
