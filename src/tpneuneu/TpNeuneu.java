@@ -13,7 +13,14 @@ public class TpNeuneu {
     /**
      * @param args the command line arguments
      */
+    
+    //CLASSE PRINCIPALE
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        Loft loft = new Loft(20,20);
+        /**
+         * 
+         */
+        
     }
 }
