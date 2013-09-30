@@ -8,9 +8,9 @@ public abstract class Neuneu implements Mangeable{
 
   protected int niveau;
 
-  public int posX;
+  protected int posX;
 
-  public int posY;
+  protected int posY;
 
   protected static int nameId=-1;
 
@@ -18,6 +18,14 @@ public abstract class Neuneu implements Mangeable{
       this.niveau = i;
   }
   
+  // getters
+  public int getPosX(){
+      return this.posX;
+  }
+  
+    public int getPosY(){
+      return this.posY;
+  }
     /**
      * 
      * @param repas repas à manger

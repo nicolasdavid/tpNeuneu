@@ -20,6 +20,7 @@ public class Loft {
       this.h=a;
       this.w=b;
       this.plateau = new Case[a][b];
+      this.population = new LinkedList<>();
       
       for (int k=0;k<a;k++){
           for(int l=0; l<b; l++){
@@ -53,6 +54,10 @@ public class Loft {
                                 n = new Lapin(k,l);
                                 break;
                         }
+                        /**
+                         * initialisation de la liste de population
+                         */
+                        this.population.add((Neuneu)n);
                       
                       break;
                   case 0 :
