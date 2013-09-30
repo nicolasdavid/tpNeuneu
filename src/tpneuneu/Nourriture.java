@@ -1,6 +1,6 @@
 package tpneuneu;
 
-public class Nourriture implements Mangeable {
+public class Nourriture extends Mangeable {
 
   protected int type;
 

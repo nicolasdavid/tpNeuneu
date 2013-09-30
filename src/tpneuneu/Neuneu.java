@@ -1,6 +1,6 @@
 package tpneuneu;
 
-public abstract class Neuneu implements Mangeable{
+public abstract class Neuneu extends Mangeable{
 
   protected String name;
 
@@ -37,7 +37,6 @@ public abstract class Neuneu implements Mangeable{
           this.setNiveau(100); //set energie of neuneu eaten to 0 (as dead) and to 100 for the eater
       }
       else{ //if eat a nourriture
-          
           if(repas.niveau+this.niveau>100){
                 repas.setNiveau(100-repas.niveau+this.niveau); //set new niveau
                 this.setNiveau(100); //Neuneu has full energy
