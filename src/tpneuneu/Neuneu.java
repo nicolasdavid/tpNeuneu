@@ -52,14 +52,22 @@ public abstract class Neuneu implements Mangeable{
   /**
    * 
    */
-  public void plusProcheVoisin() {
+  public Neuneu plusProcheVoisin(Loft loft) {
+      int i=0;
       
-      do {          
-          
+      do { 
+          for (int m=-1; m<=1; m+=2){
+              for (int n=-1; n<=1; n=+2){
+                    for (Mangeable element : loft.plateau[this.posX+i*m][this.posY+i*n].listPresence)
+                          if(element instanceof Neuneu) {
+                              return (Neuneu) element;
+                          }
+              }
+          }
       } while (true);
   }
 
-  public void plusProcheNourriture() {
+  public Nourriture plusProcheNourriture() {
       
   }
 
