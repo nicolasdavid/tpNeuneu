@@ -1,6 +1,11 @@
 package tpneuneu;
 
+import java.awt.Dimension;
+import java.awt.Point;
 import java.util.LinkedList;
+
+import graphisme.GUI;
+import graphisme.JCanvas;
 
 public class Loft {
 
@@ -12,11 +17,12 @@ public class Loft {
 
   public LinkedList<Neuneu> population;
 
-  
+  protected JCanvas jcanvas;
   
   //constructeur
-  public Loft(int a, int b){
+  public Loft(int a, int b, JCanvas jc){
       
+      this.jcanvas = jc;
       this.h=a;
       this.w=b;
       this.plateau = new Case[a][b];
@@ -67,7 +73,8 @@ public class Loft {
                       break;                                 
               }
               
-              Case c = new Case(n);
+              Case c = new Case(n,new Point(k,l),new Dimension(20,20),jc);
+              
           }
       }
   }

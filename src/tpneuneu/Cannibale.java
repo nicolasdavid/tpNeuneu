@@ -11,9 +11,10 @@ public class Cannibale extends Vorace {
      super(a, b);
      this.name="Cannibale"+this.nameId;
     }
+    /*
   @Override
   public void manger(Mangeable repas) {
-  }
+  }*/
 
   @Override
   public void seDeplacer() {
