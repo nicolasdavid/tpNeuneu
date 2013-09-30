@@ -18,7 +18,11 @@ public class TpNeuneu {
     public static void main(String[] args) {
         
         Loft loft = new Loft(20,20);
-        //TODO reste à initialiser la population des neuneus
+        
+        /**
+         * initilisation de la liste de population faite dans la construction du loft
+         */
+        
         
         /**
          * tour de jeu d'un neuneu
