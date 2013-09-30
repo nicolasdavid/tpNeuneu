@@ -17,6 +17,9 @@ public class Erratique extends Neuneu {
   }
   @Override
   public void seDeplacer() {
+      this.posX+=(int)Math.random()*6-3;
+      this.posY+=(int)Math.random()*6-3;
+      this.niveau-=5;
   }
 
 }
