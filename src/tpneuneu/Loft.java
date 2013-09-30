@@ -8,7 +8,7 @@ public class Loft {
 
   protected int w;
 
-  public LinkedList<Case> plateau;
+  public Case[][] plateau;
 
   public LinkedList<Neuneu> population;
 
@@ -18,6 +18,7 @@ public class Loft {
       
       this.h=a;
       this.w=b;
+      this.plateau = new Case[a][b];
       
       for (int k=0;k<a;k++){
           for(int l=0; l<b; l++){
