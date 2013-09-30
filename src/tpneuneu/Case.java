@@ -30,7 +30,7 @@ public class Case extends ObjetGraphique {
 	public void draw(Graphics g) {
 		Color c = g.getColor();
 		g.setColor(color);
-		g.drawRect((this.x)*10,(this.y)*10,10,10);
+		g.drawRect((this.x)*20,(this.y)*20,20,20);
 		g.setColor(c);
 	}
   
