@@ -33,8 +33,8 @@ public class Erratique extends Neuneu {
   }
   @Override //TODO il va surement falloir ajouter un cas se dans seDeplacer qui se définira 
   public void seDeplacer() {
-      this.posX+=(int)Math.random()*6-3;
-      this.posY+=(int)Math.random()*6-3;
+      this.posX+=1;//(int)Math.random()*6-3;
+      this.posY+=1;//(int)Math.random()*6-3;
       this.niveau-=5;
       /**
        * on va appeler la fonction majpresence en dehors de cette fonction
