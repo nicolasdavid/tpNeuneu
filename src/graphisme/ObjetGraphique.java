@@ -25,8 +25,7 @@ public abstract class ObjetGraphique implements IDrawable {
         @Override
 	public abstract void draw(Graphics g);
 	
-        @Override
-	public Rectangle getRectangle(){
+        	public Rectangle getRectangle(){
 		return (Rectangle) rect.clone();
 	}
 	

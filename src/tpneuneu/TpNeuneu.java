@@ -39,7 +39,7 @@ public class TpNeuneu {
         GUI.showOnFrame(jc,"loft");
         Loft loft = new Loft(20,20,jc);
         
-        /*
+        
         for (Neuneu joueur : loft.population){
             int a = joueur.getPosX();
             int b = joueur.getPosY();
@@ -47,6 +47,6 @@ public class TpNeuneu {
             loft.plateau[a][b].listPresence.remove((Mangeable)joueur);
             joueur.seDeplacer();
             joueur.majPresence(loft.plateau[joueur.getPosX()][joueur.getPosY()]);
-        }*/
+        }
     }
 }

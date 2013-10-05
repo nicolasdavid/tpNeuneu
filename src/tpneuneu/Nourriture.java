@@ -1,5 +1,8 @@
 package tpneuneu;
 
+import java.awt.Color;
+import java.awt.Graphics;
+
 public class Nourriture extends Mangeable {
 
   protected int type;
@@ -15,5 +18,7 @@ public class Nourriture extends Mangeable {
   @Override
   public void setNiveau(int i) {
   }
+  
+
 
 }

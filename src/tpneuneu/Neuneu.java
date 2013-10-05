@@ -1,19 +1,22 @@
 package tpneuneu;
 
+import graphisme.JCanvas;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Point;
+
 public abstract class Neuneu extends Mangeable{
 
   protected String name;
-
   protected int sexe;
-
   protected int niveau;
-
   protected int posX;
-
   protected int posY;
-
   protected static int nameId=-1;
 
+
+  
   public void setNiveau(int i) {
       this.niveau = i;
   }
@@ -30,6 +33,10 @@ public abstract class Neuneu extends Mangeable{
      * 
      * @param repas repas à manger
      */
+   public Neuneu(Color color, Point pos, Dimension dim, JCanvas jc){
+                super(color,pos,dim,jc);
+   }; 
+    
     
   public void manger(Mangeable repas) {
       if (repas instanceof Neuneu) { //if eat a Neuneu
@@ -89,5 +96,7 @@ public abstract class Neuneu extends Mangeable{
           }
       } while (true);
   }
+  
+
 
 }

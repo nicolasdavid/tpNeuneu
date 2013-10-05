@@ -16,5 +16,5 @@ public interface IDrawable {
 	
 	public  void draw(Graphics g);
 
-	public Rectangle getRectangle();
+	/*public Rectangle getRectangle();*/
 }

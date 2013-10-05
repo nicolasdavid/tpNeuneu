@@ -6,6 +6,7 @@ import java.util.LinkedList;
 
 import graphisme.GUI;
 import graphisme.JCanvas;
+import java.awt.Color;
 
 public class Loft {
 
@@ -30,7 +31,7 @@ public class Loft {
       
       for (int k=0;k<a;k++){
           for(int l=0; l<b; l++){
-              int qte = (int)(Math.random()*(10+1)+(-1)); 
+              int qte = (int)(Math.random()*5); 
               Mangeable n = null;
               /**
               * si vaut -1 ==> c'est un neuneu            
@@ -38,7 +39,7 @@ public class Loft {
               * si vaut 1 à 10 ==> case avec de la nourriture
               */
               switch (qte){
-                  case -1 : 
+                  case (0) : 
                         int type = (int)(Math.random()*(3)); 
                         /**
                         * si vaut 0 ==> erratique            
@@ -48,16 +49,16 @@ public class Loft {
                         */
                         switch(type){
                             case 0 :
-                                n = new Erratique(k,l);
+                                n = new Erratique(k,l, new Point(k,l), new Dimension(5,5),jc);
                                 break;
                             case 1 :
-                                n = new Vorace(k,l);
+                                n = new  Erratique(k,l, new Point(k,l), new Dimension(5,5),jc);
                                 break;
                             case 2 :
-                                n = new Cannibale(k,l);
+                                n = new  Erratique(k,l,new Point(k,l), new Dimension(5,5),jc);
                                 break;
                             default:
-                                n = new Lapin(k,l);
+                                n = new  Erratique(k,l, new Point(k,l), new Dimension(5,5),jc);
                                 break;
                         }
                         /**
@@ -66,10 +67,11 @@ public class Loft {
                         this.population.add((Neuneu)n);
                       
                       break;
-                  case 0 :
+                  case 1 :
                       break;
                   default :
-                      n = new Nourriture(qte);
+                      /*n = new Nourriture(qte);*/
+                      /* n = new  Erratique(k,l, new Point(k,l), new Dimension(5,5),jc);*/
                       break;                                 
               }
               
