@@ -9,24 +9,29 @@ import java.awt.Point;
 public class Nourriture extends Mangeable {
 
   protected int type;
-
   protected int niveau;
-  
-  public Nourriture(int qte){
-      super(Color.BLACK, new Point(0,0), new Dimension(0,0), new JCanvas());
+  protected Point place;
+      
+  public Nourriture(int qte, Point pos, Dimension dim, JCanvas jc){
+      super(Color.GREEN,pos,dim,jc);
       this.niveau=qte;
       this.type=(int)Math.random()*2;
-     
-  }
+      this.place=pos;
+      jc.addDrawable(this);
+  };
 
   @Override
   public void setNiveau(int i) {
   }
 
     @Override
-    public void draw(Graphics g) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+     	public void draw(Graphics g) {
+
+		Color c = g.getColor();
+		g.setColor(color);
+		g.drawRect((place.x)*20+10,(place.y)*20+10,5,5);
+                  g.setColor(c);
+	}    
   
 
 

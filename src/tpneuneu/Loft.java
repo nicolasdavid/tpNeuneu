@@ -68,8 +68,7 @@ public class Loft {
                   case 1 :
                       break;
                   default :
-                      /*n = new Nourriture(qte);*/
-                      /* n = new  Erratique(k,l, new Point(k,l), new Dimension(5,5),jc);*/
+                      n = new Nourriture(qte,new Point(k,l), new Dimension(5,5),jc );
                       break;                                 
               }
               

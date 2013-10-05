@@ -1,5 +1,6 @@
 package tpneuneu;
 
+import graphisme.Fenetre;
 import graphisme.GUI;
 import graphisme.JCanvas;
 import java.awt.Color;
@@ -28,20 +29,28 @@ public class TpNeuneu {
          * tour de jeu d'un neuneu
          */
         
-        JCanvas jc = new JCanvas();
-        jc.setBackground(Color.WHITE);
-        jc.setPreferredSize(new Dimension(400,400));
-        GUI.showOnFrame(jc,"loft");
-        Loft loft = new Loft(20,20,jc);
+        Fenetre fen = new Fenetre();
+        fen.getJCanvas().setBackground(Color.WHITE);
+        /**
+         * The size of the plateau need to be set to (20,20)
+         */
+        Loft loft = new Loft(20,20,fen.getJCanvas());
         
         
         for (Neuneu joueur : loft.population){
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e){
+                e.printStackTrace();
+            }
             int a = joueur.getPosX();
             int b = joueur.getPosY();
             //on retire le joueur de sa case
             loft.plateau[a][b].listPresence.remove((Mangeable)joueur);
+            loft.plateau[joueur.getPosX()][joueur.getPosY()].listPresence.remove((Mangeable)joueur);
             joueur.seDeplacer();
             joueur.majPresence(loft.plateau[joueur.getPosX()][joueur.getPosY()]);
+            fen.repaint();
         }
     }
 }
