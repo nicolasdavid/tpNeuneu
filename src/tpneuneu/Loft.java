@@ -1,12 +1,10 @@
 package tpneuneu;
 
+import graphisme.JCanvas;
 import java.awt.Dimension;
 import java.awt.Point;
 import java.util.LinkedList;
 
-import graphisme.GUI;
-import graphisme.JCanvas;
-import java.awt.Color;
 
 public class Loft {
 
