@@ -76,7 +76,7 @@ public class Loft {
               }
               
               Case c = new Case(n,new Point(k,l),new Dimension(20,20),jc);
-              
+              this.plateau[k][l]=c;
           }
       }
   }
