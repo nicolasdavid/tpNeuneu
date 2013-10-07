@@ -16,6 +16,7 @@ public class Loft {
   public Case[][] plateau;
 
   public LinkedList<Neuneu> population;
+  public LinkedList<Neuneu> populationToAdd;
 
   protected JCanvas jcanvas;
   
@@ -27,6 +28,7 @@ public class Loft {
       this.w=b;
       this.plateau = new Case[a][b];
       this.population = new LinkedList<>();
+      this.populationToAdd = new LinkedList<>();
       
       for (int k=0;k<a;k++){
           for(int l=0; l<b; l++){
