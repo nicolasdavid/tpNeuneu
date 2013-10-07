@@ -50,13 +50,13 @@ public class Loft {
                                 n = new Erratique(k,l, new Point(k,l), new Dimension(5,5),jc);
                                 break;
                             case 1 :
-                                n = new  Erratique(k,l, new Point(k,l), new Dimension(5,5),jc);
+                                n = new  Vorace(k,l, new Point(k,l), new Dimension(5,5),jc);
                                 break;
                             case 2 :
-                                n = new  Erratique(k,l,new Point(k,l), new Dimension(5,5),jc);
+                                n = new  Cannibale(k,l,new Point(k,l), new Dimension(5,5),jc);
                                 break;
                             default:
-                                n = new  Erratique(k,l, new Point(k,l), new Dimension(5,5),jc);
+                                n = new  Lapin(k,l, new Point(k,l), new Dimension(5,5),jc);
                                 break;
                         }
                         /**
