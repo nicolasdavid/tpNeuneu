@@ -50,7 +50,7 @@ public class Cannibale extends Vorace {
             }
             //if eat a nourriture
             else if(repas.get(intABouffer).niveau+this.niveau>100){ //if eating food would make the niveau >100 for the neuneu
-                      repas.get(intABouffer).setNiveau(100-repas.get(intABouffer).niveau+this.niveau); //set new niveau
+                      repas.get(intABouffer).setNiveau(-100+repas.get(intABouffer).niveau+this.niveau); //set new niveau
                       this.setNiveau(100); //Neuneu has full energy
             }
             else{ //if food.niveau+neuneu.niveau<=100 so will eat totaly the nourriture !
@@ -75,7 +75,7 @@ public class Cannibale extends Vorace {
                     this.niveau-=50;                    
                     tampon.niveau-=50;
                     //then the baby is created
-                   Cannibale baby = new Cannibale(this.posX,this.posY,Color.RED,new Point(this.posX,this.posY),new Dimension(5,5),this.jcanvas);
+                   Cannibale baby = new Cannibale(this.posX,this.posY,Color.BLACK,new Point(this.posX,this.posY),new Dimension(5,5),this.jcanvas);
                    baby.setNiveau(50);
                     findPart=true;
                     loft.populationToAdd.add((Neuneu)baby);

@@ -75,8 +75,7 @@ public abstract class Neuneu extends Mangeable{
         }
   }
  
-  public void seReproduire(Loft loft) {
-  }
+  public abstract void seReproduire(Loft loft);
 
   public abstract int seDeplacer(Loft loft);
   

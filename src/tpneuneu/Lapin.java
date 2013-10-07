@@ -54,6 +54,7 @@ public class Lapin extends Neuneu {
       return 1;
   }
   
+  @Override
       public void seReproduire(Loft loft){
         if (this.niveau>=50){
             Boolean findPart = false;

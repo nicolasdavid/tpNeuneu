@@ -67,8 +67,6 @@ public class TpNeuneu {
                 //verification that the neuneu is not already dead
                 if (!(neuneuSupp.contains(joueur))){
                     
-                
-
                     //remove Neuneu from ListPresence as he is going to move
                     loft.plateau[a][b].listPresence.remove((Mangeable)joueur);
                     //the neuneu moves
@@ -80,7 +78,7 @@ public class TpNeuneu {
 
                     //we call the method to make neuneu eat
                      joueur.manger(loft.plateau[c][d].listPresence);
-                     //joueur.seReproduire(loft);
+                     joueur.seReproduire(loft);
 
 
                     //we populate a list of Nourriture and Neuneu which are dead in the new case
@@ -115,19 +113,20 @@ public class TpNeuneu {
                     fen.repaint();
                     }
             }
+               
+                if(!(loft.populationToAdd.isEmpty())){
+                        for (Neuneu element : loft.populationToAdd){
+                            loft.population.add(element);
+                            System.out.println(element.getClass()+" is born at "+ element.posX+", "+element.posY);
+                         }             
+                        while (!loft.populationToAdd.isEmpty()) {
+                            loft.populationToAdd.removeFirst();
+                        }
+                }
+                
                 for (Neuneu element : neuneuSupp){
                     loft.population.remove(element);
                 }
-                if(!(loft.populationToAdd.isEmpty())){
-                                        for (Neuneu element : loft.populationToAdd){
-                        loft.population.add(element);
-                        System.out.println(element.getClass()+" is born at "+ element.posX+", "+element.posY);
-                          }             
-                                        while (!loft.populationToAdd.isEmpty()) {
-                        loft.populationToAdd.removeFirst();
-                         }
-                }
-
 
                 
             
