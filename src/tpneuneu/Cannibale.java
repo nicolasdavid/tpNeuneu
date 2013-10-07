@@ -3,6 +3,7 @@ package tpneuneu;
 import graphisme.JCanvas;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.Point;
 import java.util.LinkedList;
 
@@ -50,5 +51,20 @@ public class Cannibale extends Vorace {
             }
         }
   }
+     	public void draw(Graphics g) {
+                if(niveau==0){
+		Color c = g.getColor();
+		g.setColor(color);
+		g.drawRect((this.posX)*20+10,(this.posY)*20,5,5);
+                  g.setColor(c);
+                }
+                if(niveau>0){
+		Color c = g.getColor();
+		g.setColor(color);
+		g.fillRect((this.posX)*20+10,(this.posY)*20,5,5);
+                  g.setColor(c);
+                }
+                
+	}   
    
 }

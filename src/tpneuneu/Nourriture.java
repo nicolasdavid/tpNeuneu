@@ -47,11 +47,11 @@ public class Nourriture extends Mangeable {
                 
                 if(niveau==0){
 
-		g.drawRect((posX)*20+10,(posY)*20+10,5,5);
+		g.drawRect((posX)*20+15,(posY)*20+15,5,5);
                   
                 }
                 else if(niveau>0){
-		g.fillRect((posX)*20+10,(posY)*20+10,5,5);
+		g.fillRect((posX)*20+15,(posY)*20+15,5,5);
 
                 }
                 g.setColor(c);
