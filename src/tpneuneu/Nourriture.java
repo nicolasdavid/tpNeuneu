@@ -20,9 +20,6 @@ public class Nourriture extends Mangeable {
       jc.addDrawable(this);
   };
 
-  @Override
-  public void setNiveau(int i) {
-  }
 
     @Override
      	public void draw(Graphics g) {

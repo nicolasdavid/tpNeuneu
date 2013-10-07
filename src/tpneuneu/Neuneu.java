@@ -17,9 +17,7 @@ public abstract class Neuneu extends Mangeable{
 
 
   
-  public void setNiveau(int i) {
-      this.niveau = i;
-  }
+
   
   // getters
   public int getPosX(){
