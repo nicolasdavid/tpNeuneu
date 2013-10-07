@@ -1,10 +1,8 @@
 package tpneuneu;
 
 import graphisme.Fenetre;
-import graphisme.GUI;
-import graphisme.JCanvas;
 import java.awt.Color;
-import java.awt.Dimension;
+import java.util.LinkedList;
 
 /**
  *
@@ -39,7 +37,12 @@ public class TpNeuneu {
         /**
          * each Neuneu plays one time
          */
+        /**
+         * Init the list of dead neuneus
+         */
+        LinkedList<Mangeable> aSupp = new LinkedList<>();
         for (Neuneu joueur : loft.population){
+            
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e){
@@ -53,8 +56,14 @@ public class TpNeuneu {
             joueur.seDeplacer();
             //the neuneu is added to ListPresence of his new position
             joueur.majPresence(loft.plateau[joueur.getPosX()][joueur.getPosY()]);
+            //Add the neuneu of niveau 0 to aSupp
+            if (joueur.niveau == 0) {
+                 aSupp.add((Mangeable)joueur);
+            }
             //display is refreshed
             fen.repaint();
         }
+        
+        
     }
 }
