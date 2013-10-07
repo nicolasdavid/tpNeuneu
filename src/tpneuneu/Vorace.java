@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Point;
+import java.util.LinkedList;
 
 public class Vorace extends Erratique {
 
@@ -28,6 +29,10 @@ public class Vorace extends Erratique {
       this.niveau-=10;
       return 1; //needed for some methods
   }
+  
+     public void manger(LinkedList<Mangeable> repas) {
+       super.manger(repas);
+   }
   
   
       public void seReproduire(Loft loft){

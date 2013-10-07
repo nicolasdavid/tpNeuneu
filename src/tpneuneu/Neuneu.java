@@ -50,7 +50,7 @@ public abstract class Neuneu extends Mangeable{
          */
         int bouffeInt = repas.size();
         
-        if (bouffeInt > 1){ //if there is more than 1 Mangeable in the case (more than the neuneu recently moved)
+        if (bouffeInt > 0){ //if there is more than 1 Mangeable in the case (more than the neuneu recently moved)
             int intABouffer=0, pasManger=0;
                 //Case of none cannibale so we search the first not neuneu in ListePresence
                 //we do a while to have the first Mangeable different from a Neuneu (not cannibale !)
@@ -64,7 +64,7 @@ public abstract class Neuneu extends Mangeable{
             if (pasManger==0){
                 //if eat a nourriture
                 if(repas.get(intABouffer).niveau+this.niveau>100){ //if eating food would make the niveau >100 for the neuneu
-                      repas.get(intABouffer).setNiveau(100-repas.get(intABouffer).niveau+this.niveau); //set new niveau
+                      repas.get(intABouffer).setNiveau(-100+repas.get(intABouffer).niveau+this.niveau); //set new niveau
                       this.setNiveau(100); //Neuneu has full energy
                 }
                 else{ //if food.niveau+neuneu.niveau<=100 so will eat totaly the nourriture !

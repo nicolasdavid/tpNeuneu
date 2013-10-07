@@ -25,16 +25,17 @@ public class Lapin extends Neuneu {
       int anciennePosX=this.posX, anciennePosY=this.posY;
       this.plusProcheVoisin(loft);
       
+      //check no border exeption !
+      this.checkBords(20,20);
+      
       for(int i=1; i<Math.abs(this.posX-anciennePosX); i++){ //the lapin moves only in X first, then Y.
         if(this.posX-anciennePosX>=0){
             //we call the method to make neuneu eat
              this.manger(loft.plateau[anciennePosX+i][anciennePosY].listPresence);
-             int k = 0;
         }
         else{
             //we call the method to make neuneu eat
              this.manger(loft.plateau[anciennePosX-i][anciennePosY].listPresence);
-             int k = 0;
         } 
       }
       
@@ -42,14 +43,14 @@ public class Lapin extends Neuneu {
         if(this.posY-anciennePosY>=0){
             //we call the method to make neuneu eat
              this.manger(loft.plateau[anciennePosX][anciennePosY+i].listPresence);
-             int k = 0;
         }
         else{
             //we call the method to make neuneu eat
              this.manger(loft.plateau[anciennePosX][anciennePosY-i].listPresence);
-             int k = 0;
         } 
       }
+      
+      this.niveau-=10;
       return 1;
   }
   

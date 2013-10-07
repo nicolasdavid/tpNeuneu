@@ -8,6 +8,7 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.Rectangle;
+import java.util.LinkedList;
 
 public class Erratique extends Neuneu {
 
@@ -44,6 +45,10 @@ public class Erratique extends Neuneu {
       this.niveau-=10;
       return 1; //need the return statement for the Mangeable
   }
+  
+   public void manger(LinkedList<Mangeable> repas) {
+       super.manger(repas);
+   }
   
     public void seReproduire(Loft loft){
         if (this.niveau>=50){
