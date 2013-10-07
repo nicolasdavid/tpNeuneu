@@ -21,22 +21,24 @@ public class TpNeuneu {
         
         
         
-        /**
-         * initilisation de la liste de population faite dans la construction du loft
-         */
+
         
         /**
-         * tour de jeu d'un neuneu
+         * Creation of the display
          */
         
         Fenetre fen = new Fenetre();
         fen.getJCanvas().setBackground(Color.WHITE);
         /**
-         * The size of the plateau need to be set to (20,20)
+         * Initialisation of the Loft (includes its inhabitants) 
+         * /!\ The size of the plateau need to be set to (20,20)
          */
         Loft loft = new Loft(20,20,fen.getJCanvas());
         
         
+        /**
+         * each Neuneu plays one time
+         */
         for (Neuneu joueur : loft.population){
             try {
                 Thread.sleep(100);
@@ -45,11 +47,13 @@ public class TpNeuneu {
             }
             int a = joueur.getPosX();
             int b = joueur.getPosY();
-            //on retire le joueur de sa case
+            //remove Neuneu from ListPresence as he is going to move
             loft.plateau[a][b].listPresence.remove((Mangeable)joueur);
-            loft.plateau[joueur.getPosX()][joueur.getPosY()].listPresence.remove((Mangeable)joueur);
+            //the neuneu moves
             joueur.seDeplacer();
+            //the neuneu is added to ListPresence of his new position
             joueur.majPresence(loft.plateau[joueur.getPosX()][joueur.getPosY()]);
+            //display is refreshed
             fen.repaint();
         }
     }
