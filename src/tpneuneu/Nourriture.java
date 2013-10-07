@@ -9,7 +9,6 @@ import java.awt.Point;
 public class Nourriture extends Mangeable {
 
   protected int type;
-  protected int niveau;
   protected Point place;
       
   public Nourriture(int qte, Point pos, Dimension dim, JCanvas jc){

@@ -56,7 +56,7 @@ public class TpNeuneu {
 
                 //we populate a list of Nourriture and Neuneu which are dead in the new case
                 for(Mangeable element : loft.plateau[c][d].listPresence){
-                    if (element.niveau==0){
+                    if ((int)element.niveau == 0){
                        aSupp.add((Mangeable)element);
                     }
                 }

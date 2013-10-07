@@ -10,7 +10,6 @@ public abstract class Neuneu extends Mangeable{
 
   protected String name;
   protected int sexe;
-  protected int niveau;
   protected int posX;
   protected int posY;
   protected static int nameId=-1;
