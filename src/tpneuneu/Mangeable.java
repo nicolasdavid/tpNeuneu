@@ -13,7 +13,11 @@ public abstract class Mangeable extends ObjetGraphique{
   protected JCanvas jcanvas;  
   protected int niveau;
   
-  public abstract void setNiveau(int i);
+  public void setNiveau(int i){
+      if(i>=0){
+          this.niveau = i; ;
+      }   
+  };
 
   
   public Mangeable(Color color, Point pos, Dimension dim, JCanvas jc){
