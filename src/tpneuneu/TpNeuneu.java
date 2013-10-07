@@ -39,9 +39,11 @@ public class TpNeuneu {
         int comptRangeeMort =0;
         int comptNourriture=0;
         while(!loft.population.isEmpty()){
+            
             /**
              * each Neuneu plays one time
              */
+            
             compt++;
             LinkedList<Mangeable> aSupp;
             LinkedList<Neuneu> neuneuSupp = new LinkedList<>();
@@ -65,28 +67,16 @@ public class TpNeuneu {
                 //remove Neuneu from ListPresence as he is going to move
                 loft.plateau[a][b].listPresence.remove((Mangeable)joueur);
                 //the neuneu moves
-                joueur.seDeplacer();
+                joueur.seDeplacer(loft);
                 //the neuneu is added to ListPresence of his new position
                 int c = joueur.getPosX();
                 int d = joueur.getPosY();
                 joueur.majPresence(loft.plateau[c][d]);
 
                 //we decided what is going to eat for the neuneu
-               int bouffeInt = loft.plateau[c][d].listPresence.size();
-               if (bouffeInt > 0){
-                   int intABouffer=0, pasManger=0;
-                   if (!(joueur instanceof Cannibale)){ //Case of none cannibale so we search the first not neuneu in ListePresence
-                       while (intABouffer<bouffeInt && loft.plateau[c][d].listPresence.get(intABouffer) instanceof Neuneu){
-                           intABouffer++;
-                       }
-                       if (intABouffer >= bouffeInt){ //no Nourriture, only Neuneu on the case so skip the manger function
-                           pasManger = 1;
-                       }
-                   }          
-                   if (pasManger==0){
-                        joueur.manger((Mangeable) loft.plateau[c][d].listPresence.get(intABouffer));
-                   }
-               }
+               
+                 joueur.manger(loft.plateau[c][d].listPresence);
+
                
                 //we populate a list of Nourriture and Neuneu which are dead in the new case
                 for(Mangeable element : loft.plateau[c][d].listPresence){

@@ -21,7 +21,7 @@ public class Lapin extends Neuneu {
   }
   
   @Override
-  public void seDeplacer() {
+  public void seDeplacer(Loft loft) {
   }
 
     @Override

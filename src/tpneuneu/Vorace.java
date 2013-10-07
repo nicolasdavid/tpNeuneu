@@ -17,7 +17,13 @@ public class Vorace extends Erratique {
     }
     
   @Override
-  public void seDeplacer() {
+  public void seDeplacer(Loft loft) {
+     // Nourriture plusProche = this.plusProcheNourriture(loft);
+      
+      //check no border exeption !
+      this.checkBords(20,20);
+      
+      this.niveau-=10;
   }
 
 }
