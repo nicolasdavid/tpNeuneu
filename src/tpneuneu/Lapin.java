@@ -16,7 +16,7 @@ public class Lapin extends Neuneu {
       this.posX=a;
       this.posY=b;
       this.niveau=100;
-      this.sexe=(int)Math.random()*2;
+      this.sexe=(int)(Math.random()*2);
       jc.addDrawable(this);
   }
   
