@@ -68,7 +68,7 @@ public class Loft {
                   case 1 :
                       break;
                   default :
-                      n = new Nourriture(qte,new Point(k,l), new Dimension(5,5),jc );
+                      n = new Nourriture(10,new Point(k,l), new Dimension(5,5),jc );
                       break;                                 
               }
               

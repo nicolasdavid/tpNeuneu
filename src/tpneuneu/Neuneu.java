@@ -27,6 +27,14 @@ public abstract class Neuneu extends Mangeable{
     public int getPosY(){
       return this.posY;
   }
+    
+    public void setPosX(int i){
+     posX=i;
+  }  
+    
+  public void setPosY(int j){
+     posY=j;
+  }
     /**
      * 
      * @param repas repas à manger
@@ -52,7 +60,7 @@ public abstract class Neuneu extends Mangeable{
           }
       }
   }
-
+ 
   public void seReproduire() {
   }
 

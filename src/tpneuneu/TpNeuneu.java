@@ -17,10 +17,6 @@ public class TpNeuneu {
     //CLASSE PRINCIPALE
     public static void main(String[] args) {
         
-        
-        
-
-        
         /**
          * Creation of the display
          */
@@ -33,37 +29,54 @@ public class TpNeuneu {
          */
         Loft loft = new Loft(20,20,fen.getJCanvas());
         
-        
-        /**
-         * each Neuneu plays one time
-         */
-        /**
-         * Init the list of dead neuneus
-         */
-        LinkedList<Mangeable> aSupp = new LinkedList<>();
-        for (Neuneu joueur : loft.population){
-            
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e){
-                e.printStackTrace();
+        while(!loft.population.isEmpty()){
+            /**
+             * each Neuneu plays one time
+             */
+            LinkedList<Mangeable> aSupp;
+            LinkedList<Neuneu> neuneuSupp = new LinkedList<>();
+
+            for (Neuneu joueur : loft.population){
+                aSupp = new LinkedList<>();
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e){
+                    e.printStackTrace();
+                }
+                int a = joueur.getPosX();
+                int b = joueur.getPosY();
+                //remove Neuneu from ListPresence as he is going to move
+                loft.plateau[a][b].listPresence.remove((Mangeable)joueur);
+                //the neuneu moves
+                joueur.seDeplacer();
+                //the neuneu is added to ListPresence of his new position
+                int c = joueur.getPosX();
+                int d = joueur.getPosY();
+                joueur.majPresence(loft.plateau[c][d]);
+
+                //we populate a list of Nourriture and Neuneu which are dead in the new case
+                for(Mangeable element : loft.plateau[c][d].listPresence){
+                    if (element.niveau==0){
+                       aSupp.add((Mangeable)element);
+                    }
+                }
+                //we remove those elements from the new case
+                for(Mangeable element : aSupp){
+                    loft.plateau[c][d].listPresence.remove(element);
+                }
+
+               if (joueur.niveau==0){
+                       neuneuSupp.add((Neuneu)joueur);
+                       joueur.setPosX(1000);
+                       joueur.setPosY(1000);
+                    }
+                //display is refreshed
+                fen.repaint();
+                }
+            for (Neuneu element : neuneuSupp){
+                loft.population.remove(element);
             }
-            int a = joueur.getPosX();
-            int b = joueur.getPosY();
-            //remove Neuneu from ListPresence as he is going to move
-            loft.plateau[a][b].listPresence.remove((Mangeable)joueur);
-            //the neuneu moves
-            joueur.seDeplacer();
-            //the neuneu is added to ListPresence of his new position
-            joueur.majPresence(loft.plateau[joueur.getPosX()][joueur.getPosY()]);
-            //Add the neuneu of niveau 0 to aSupp
-            if (joueur.niveau == 0) {
-                 aSupp.add((Mangeable)joueur);
-            }
-            //display is refreshed
-            fen.repaint();
         }
-        
-        
+        System.out.println("fini");
     }
 }
