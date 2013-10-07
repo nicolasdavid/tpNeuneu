@@ -60,7 +60,7 @@ public abstract class Neuneu extends Mangeable{
           }
       }
   }
-
+ 
   public void seReproduire() {
   }
 

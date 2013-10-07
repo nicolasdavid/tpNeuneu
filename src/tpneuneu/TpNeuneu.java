@@ -17,10 +17,6 @@ public class TpNeuneu {
     //CLASSE PRINCIPALE
     public static void main(String[] args) {
         
-        
-        
-
-        
         /**
          * Creation of the display
          */
