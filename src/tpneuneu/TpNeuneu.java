@@ -62,7 +62,18 @@ public class TpNeuneu {
                 //we decided what is going to eat for the neuneu
                int bouffeInt = loft.plateau[c][d].listPresence.size();
                if (bouffeInt > 0){
-                   joueur.manger((Mangeable) loft.plateau[c][d].listPresence.get(0));
+                   int intABouffer=0, pasManger=0;
+                   if (!(joueur instanceof Cannibale)){ //Case of none cannibale so we search the first not neuneu in ListePresence
+                       while (intABouffer<bouffeInt && loft.plateau[c][d].listPresence.get(intABouffer) instanceof Neuneu){
+                           intABouffer++;
+                       }
+                       if (intABouffer >= bouffeInt){ //no Nourriture, only Neuneu on the case so skip the manger function
+                           pasManger = 1;
+                       }
+                   }          
+                   if (pasManger==0){
+                        joueur.manger((Mangeable) loft.plateau[c][d].listPresence.get(intABouffer));
+                   }
                }
                
                 //we populate a list of Nourriture and Neuneu which are dead in the new case
@@ -84,7 +95,6 @@ public class TpNeuneu {
                     loft.plateau[c][d].listPresence.remove(element);
                 }
 
-               
                
                 //display is refreshed
                 fen.repaint();

@@ -52,13 +52,13 @@ public abstract class Neuneu extends Mangeable{
           this.setNiveau(100); //set energie of neuneu eaten to 0 (as dead) and to 100 for the eater
       }
       else{ //if eat a nourriture
-          if(repas.niveau+this.niveau>=100){
+          if(repas.niveau+this.niveau>100){
                 repas.setNiveau(100-repas.niveau+this.niveau); //set new niveau
                 this.setNiveau(100); //Neuneu has full energy
           }
           else{
-                repas.setNiveau(0); //no more food
-                this.setNiveau(this.niveau+repas.niveau);
+              this.setNiveau(this.niveau+repas.niveau);  
+              repas.setNiveau(0); //no more food               
           }
       }
   }
