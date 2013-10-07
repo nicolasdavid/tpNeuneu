@@ -24,9 +24,21 @@ public class Lapin extends Neuneu {
   public void seDeplacer() {
   }
 
-    @Override
-    public void draw(Graphics g) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
+
+      	public void draw(Graphics g) {
+                if(niveau==0){
+		Color c = g.getColor();
+		g.setColor(color);
+		g.drawRect((this.posX)*20+15,(this.posY)*20,5,5);
+                  g.setColor(c);
+                }
+                if(niveau>0){
+		Color c = g.getColor();
+		g.setColor(color);
+		g.fillRect((this.posX)*20+15,(this.posY)*20,5,5);
+                  g.setColor(c);
+                }
+                
+	}      
 }

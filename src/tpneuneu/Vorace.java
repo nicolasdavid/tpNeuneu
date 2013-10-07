@@ -3,6 +3,7 @@ package tpneuneu;
 import graphisme.JCanvas;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.Point;
 
 public class Vorace extends Erratique {
@@ -21,4 +22,19 @@ public class Vorace extends Erratique {
   public void seDeplacer() {
   }
 
+    	public void draw(Graphics g) {
+                if(niveau==0){
+		Color c = g.getColor();
+		g.setColor(color);
+		g.drawRect((this.posX)*20+5,(this.posY)*20,5,5);
+                  g.setColor(c);
+                }
+                if(niveau>0){
+		Color c = g.getColor();
+		g.setColor(color);
+		g.fillRect((this.posX)*20+5,(this.posY)*20,5,5);
+                  g.setColor(c);
+                }
+                
+	}      
 }
