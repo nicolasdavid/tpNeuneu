@@ -36,6 +36,7 @@ public class TpNeuneu {
          * comptMort and comptNourriture allow to display a graveyard of what is removed from the loft
          */
         int comptMort=0;
+        int comptRangeeMort =0;
         int comptNourriture=0;
         while(!loft.population.isEmpty()){
             /**
@@ -95,15 +96,17 @@ public class TpNeuneu {
                        if (element instanceof Neuneu){
                             neuneuSupp.add((Neuneu)joueur);
                             comptMort++;
-                            joueur.setPosX(25+comptMort);
-                            joueur.setPosY(0);
+                            if (25+((int)comptMort/2)>50){
+                                comptRangeeMort++;
+                                comptMort=0;
+                            }
+                            joueur.setPosX(25+((int)comptMort/2));
+                            joueur.setPosY(comptRangeeMort);
                             fen.repaint();
                        }
                        else if (element instanceof Nourriture){
                             comptNourriture++;
                             fen.repaint();
-                            //((Nourriture)element).setPosX(25+comptNourriture);
-                            //((Nourriture)element).setPosY(2);
                     }
                     }
                 }
