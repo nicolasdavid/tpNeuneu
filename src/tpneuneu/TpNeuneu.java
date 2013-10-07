@@ -63,6 +63,14 @@ public class TpNeuneu {
                 for(Mangeable element : loft.plateau[c][d].listPresence){
                     if ((int)element.niveau == 0){
                        aSupp.add((Mangeable)element);
+                       if (element instanceof Neuneu){
+                            neuneuSupp.add((Neuneu)joueur);
+                            joueur.setPosX(1000);
+                            joueur.setPosY(1000);
+                       }
+                       else if (element instanceof Nourriture){
+                            ((Nourriture)element).setPlace(1000,1000);
+                    }
                     }
                 }
                 //we remove those elements from the new case
@@ -70,11 +78,8 @@ public class TpNeuneu {
                     loft.plateau[c][d].listPresence.remove(element);
                 }
 
-               if (joueur.niveau==0){
-                       neuneuSupp.add((Neuneu)joueur);
-                       joueur.setPosX(1000);
-                       joueur.setPosY(1000);
-                    }
+               
+               
                 //display is refreshed
                 fen.repaint();
                 }

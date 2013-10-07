@@ -10,7 +10,12 @@ public class Nourriture extends Mangeable {
 
   protected int type;
   protected Point place;
-      
+
+  public void setPlace(int a, int b){
+      this.place.x=a;
+      this.place.y=b;
+  }   
+  
   public Nourriture(int qte, Point pos, Dimension dim, JCanvas jc){
       super(Color.GREEN,pos,dim,jc);
       this.niveau=qte;
@@ -19,7 +24,7 @@ public class Nourriture extends Mangeable {
       jc.addDrawable(this);
   };
 
-
+ 
     @Override
      	public void draw(Graphics g) {
 
