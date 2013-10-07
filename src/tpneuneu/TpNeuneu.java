@@ -42,6 +42,7 @@ public class TpNeuneu {
          */
         LinkedList<Mangeable> aSupp = new LinkedList<>();
         for (Neuneu joueur : loft.population){
+            
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e){
