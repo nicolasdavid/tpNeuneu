@@ -31,7 +31,7 @@ public class Erratique extends Neuneu {
       this.sexe=(int)Math.random()*2;
       jc.addDrawable(this);
   }
-  @Override //TODO il va surement falloir ajouter un cas se dans seDeplacer qui se définira 
+  @Override
   public void seDeplacer() {
       this.posX+=(int)(Math.random()*6)-3;
       /**

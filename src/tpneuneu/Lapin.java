@@ -8,14 +8,16 @@ import java.awt.Point;
 
 public class Lapin extends Neuneu {
     
-  public Lapin(int a, int b){
-      super(Color.BLACK, new Point(0,0), new Dimension(0,0), new JCanvas());
+  public Lapin(int a, int b, Point pos, Dimension dim, JCanvas jc){
+      super(Color.RED,pos,dim,jc);
+      
       this.nameId++;
       this.name="Lapin"+this.nameId;
       this.posX=a;
       this.posY=b;
       this.niveau=100;
       this.sexe=(int)Math.random()*2;
+      jc.addDrawable(this);
   }
   
   @Override
