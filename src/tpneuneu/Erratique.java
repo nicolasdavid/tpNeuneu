@@ -56,10 +56,18 @@ public class Erratique extends Neuneu {
   }
   
   	public void draw(Graphics g) {
-
+                if(niveau==0){
 		Color c = g.getColor();
 		g.setColor(color);
 		g.drawRect((this.posX)*20+5,(this.posY)*20+5,5,5);
                   g.setColor(c);
-	}    
+                }
+                if(niveau>0){
+		Color c = g.getColor();
+		g.setColor(color);
+		g.fillRect((this.posX)*20+5,(this.posY)*20+5,5,5);
+                  g.setColor(c);
+                }
+                
+	}       
 }
