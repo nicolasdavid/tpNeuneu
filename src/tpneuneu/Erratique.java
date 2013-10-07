@@ -46,7 +46,7 @@ public class Erratique extends Neuneu {
   }
   
     public void seReproduire(Loft loft){
-        if (this.niveau>=20){
+        if (this.niveau>=50){
             Boolean findPart = false;
             Mangeable tampon ;
             int i = 0;
@@ -56,11 +56,12 @@ public class Erratique extends Neuneu {
                 // and tampon is not this
                 // and tampon as enought energy to make a baby
                 // and tampon and this can have a baby together
-                if((tampon instanceof Neuneu)&& !(this.equals(tampon)) && tampon.niveau>=20 && (((Neuneu)tampon).sexe+this.sexe)==1){
-                    this.niveau-=20;                    
-                    tampon.niveau-=20;
+                if((tampon instanceof Neuneu)&& !(this.equals(tampon)) && tampon.niveau>=50 && (((Neuneu)tampon).sexe+this.sexe)==1){
+                    this.niveau-=50;                    
+                    tampon.niveau-=50;
                     //then the baby is created
                     Erratique baby = new Erratique(this.posX,this.posY,Color.RED,new Point(this.posX,this.posY),new Dimension(5,5),this.jcanvas);
+                    baby.setNiveau(50);
                     findPart=true;
                     loft.populationToAdd.add((Neuneu)baby);
                     baby.majPresence(loft.plateau[this.posX][this.posY]);

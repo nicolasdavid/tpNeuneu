@@ -18,7 +18,7 @@ public class Fenetre extends JFrame{
         super();
         jc=new JCanvas();
         this.setVisible(true);
-        this.setSize(900,500);
+        this.setSize(1200,500);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(jc);

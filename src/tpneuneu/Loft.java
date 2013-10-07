@@ -41,7 +41,7 @@ public class Loft {
               */
               switch (qte){
                   case (0) : 
-                        int type = (int)(Math.random()*(3)); 
+                        int type = (int)(Math.random()*(4)); 
                         /**
                         * si vaut 0 ==> erratique            
                         * si vaut 1 ==> vorace
@@ -71,7 +71,7 @@ public class Loft {
                   case 1 :
                       break;
                   default :
-                      n = new Nourriture(10,k,l,new Point(k,l), new Dimension(5,5),jc );
+                      n = new Nourriture(20,k,l,new Point(k,l), new Dimension(5,5),jc );
                       break;                                 
               }
               
