@@ -28,14 +28,19 @@ public class TpNeuneu {
          * /!\ The size of the plateau need to be set to (20,20)
          */
         Loft loft = new Loft(20,20,fen.getJCanvas());
-        
+        int compt=0;
         while(!loft.population.isEmpty()){
             /**
              * each Neuneu plays one time
              */
+            compt++;
             LinkedList<Mangeable> aSupp;
             LinkedList<Neuneu> neuneuSupp = new LinkedList<>();
-
+            
+            
+            System.out.println("Tour numero "+ compt+ " : le loft contient " + loft.population.size()+ " neuneus");
+           
+            
             for (Neuneu joueur : loft.population){
                 aSupp = new LinkedList<>();
                 try {

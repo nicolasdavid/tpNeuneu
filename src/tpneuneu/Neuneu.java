@@ -27,6 +27,9 @@ public abstract class Neuneu extends Mangeable{
       return this.posY;
   }
     
+  public String getName(){
+      return this.name;
+  }
     public void setPosX(int i){
      posX=i;
   }  
