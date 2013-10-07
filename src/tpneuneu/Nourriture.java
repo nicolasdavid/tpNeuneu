@@ -26,25 +26,35 @@ public class Nourriture extends Mangeable {
       this.niveau=qte;
       this.posX=a;
       this.posY=b;
-      this.type=(int)Math.random()*2;
+      this.type=(int)(Math.random()*2);
       jc.addDrawable(this);
   };
 
  
     @Override
      	public void draw(Graphics g) {
+            Color c = g.getColor();
+                if(this.type==0){
+                       g.setColor(Color.GREEN);
+                }
+                else if(this.type==1){
+                       g.setColor(Color.BLUE);
+                }
+                else {
+                       g.setColor(Color.CYAN);//isn't used
+                }
+                
+                
                 if(niveau==0){
-		Color c = g.getColor();
-		g.setColor(color);
+
 		g.drawRect((posX)*20+10,(posY)*20+10,5,5);
-                  g.setColor(c);
+                  
                 }
                 else if(niveau>0){
-                    		Color c = g.getColor();
-		g.setColor(color);
 		g.fillRect((posX)*20+10,(posY)*20+10,5,5);
-                  g.setColor(c);
+
                 }
+                g.setColor(c);
 	}    
   
 

@@ -17,7 +17,7 @@ public class Case extends ObjetGraphique {
   
   //constructeur
   public Case(Mangeable n, Point pos, Dimension dim, JCanvas jc){
-      super(Color.BLUE, pos, dim);
+      super(Color.BLACK, pos, dim);
       this.x=pos.x;
       this.y=pos.y;
       this.jcanvas = jc;
