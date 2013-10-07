@@ -33,19 +33,19 @@ public class Erratique extends Neuneu {
   }
   @Override //TODO il va surement falloir ajouter un cas se dans seDeplacer qui se définira 
   public void seDeplacer() {
-      this.posX+=(int)Math.random()*6-3;
+      this.posX+=(int)(Math.random()*6)-3;
       /**
        * Prevents out of bound for x
        */
-      if (this.posX>20) 
+      if (this.posX>=20) 
           this.posX=19;
       if (this.posX<0)
           this.posX=0;
-      this.posY+=(int)Math.random()*6-3;
+      this.posY+=(int)(Math.random()*6)-3;
       /**
        * Prevents out of bound for y
        */
-      if (this.posY>20)
+      if (this.posY>=20)
           this.posY=19;
       if (this.posY<0)
           this.posY=0;
