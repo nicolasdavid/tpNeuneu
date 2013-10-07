@@ -39,7 +39,7 @@ public class Loft {
               */
               switch (qte){
                   case (0) : 
-                        int type = (int)(Math.random()*(3)); 
+                        int type = (int)(Math.random()*(4)); 
                         /**
                         * si vaut 0 ==> erratique            
                         * si vaut 1 ==> vorace
