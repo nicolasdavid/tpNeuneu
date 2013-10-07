@@ -22,7 +22,10 @@ public class Case extends ObjetGraphique {
       this.y=pos.y;
       this.jcanvas = jc;
       this.listPresence = new LinkedList<>();
-      this.listPresence.add(n);
+      if((Object)n!=null){
+          this.listPresence.add(n);
+      }
+      
       jc.addDrawable(this);
       
   }

@@ -49,7 +49,7 @@ public class Erratique extends Neuneu {
           this.posY=19;
       if (this.posY<0)
           this.posY=0;
-      this.niveau-=(int)Math.random()*10;
+      this.niveau-=10;
       /**
        * on va appeler la fonction majpresence en dehors de cette fonction
        */
