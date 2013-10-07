@@ -64,53 +64,60 @@ public class TpNeuneu {
                 //position before moving
                 int a = joueur.getPosX();
                 int b = joueur.getPosY();
-                //remove Neuneu from ListPresence as he is going to move
-                loft.plateau[a][b].listPresence.remove((Mangeable)joueur);
-                //the neuneu moves
-                joueur.seDeplacer(loft);
-                //the neuneu is added to ListPresence of his new position
-                int c = joueur.getPosX();
-                int d = joueur.getPosY();
-                joueur.majPresence(loft.plateau[c][d]);
+                //verification that the neuneu is not already dead
+                if (!(neuneuSupp.contains(joueur))){
+                    
+                
 
-                //we call the method to make neuneu eat
-                 joueur.manger(loft.plateau[c][d].listPresence);
+                    //remove Neuneu from ListPresence as he is going to move
+                    loft.plateau[a][b].listPresence.remove((Mangeable)joueur);
+                    //the neuneu moves
+                    joueur.seDeplacer(loft);
+                    //the neuneu is added to ListPresence of his new position
+                    int c = joueur.getPosX();
+                    int d = joueur.getPosY();
+                    joueur.majPresence(loft.plateau[c][d]);
 
-               
-                //we populate a list of Nourriture and Neuneu which are dead in the new case
-                for(Mangeable element : loft.plateau[c][d].listPresence){
-                    if ((int)element.niveau == 0){
-                       aSupp.add((Mangeable)element);
-                       System.out.println(element.getClass()+" killed");
-                       if (element instanceof Neuneu){
-                            neuneuSupp.add((Neuneu)element);
-                            comptMort++;
-                            if (25+((int)comptMort/2)>50){
-                                comptRangeeMort++;
-                                comptMort=0;
-                            }
-                            (Neuneu) element.setPosX(25+((int)comptMort/2));
-                            (Neuneu) element.setPosY(comptRangeeMort);
-                            fen.repaint();
-                       }
-                       else if (element instanceof Nourriture){
-                            comptNourriture++;
-                            fen.repaint();
+                    //we call the method to make neuneu eat
+                     joueur.manger(loft.plateau[c][d].listPresence);
+
+
+                    //we populate a list of Nourriture and Neuneu which are dead in the new case
+                    for(Mangeable element : loft.plateau[c][d].listPresence){
+                        if ((int)element.niveau == 0){
+                           aSupp.add((Mangeable)element);
+                           System.out.println(element.getClass()+" killed");
+                           if (element instanceof Neuneu){
+                                neuneuSupp.add((Neuneu)element);
+                                comptMort++;
+                                if (25+((int)comptMort/2)>50){
+                                    comptRangeeMort++;
+                                    comptMort=0;
+                                }
+                                ((Neuneu)element).setPosX(25+((int)comptMort/2));
+                                ((Neuneu)element).setPosY(comptRangeeMort);
+                                fen.repaint();
+                           }
+                           else if (element instanceof Nourriture){
+                                comptNourriture++;
+                                fen.repaint();
+                        }
+                        }
                     }
+                    //we remove those elements from the new case
+                    for(Mangeable element : aSupp){
+                        loft.plateau[c][d].listPresence.remove(element);
                     }
-                }
-                //we remove those elements from the new case
-                for(Mangeable element : aSupp){
-                    loft.plateau[c][d].listPresence.remove(element);
-                }
 
-               
-                //display is refreshed
-                fen.repaint();
-                }
-            for (Neuneu element : neuneuSupp){
-                loft.population.remove(element);
+
+                    //display is refreshed
+                    fen.repaint();
+                    }
             }
+                for (Neuneu element : neuneuSupp){
+                    loft.population.remove(element);
+                }
+            
         }
         System.out.println("fini");
     }
