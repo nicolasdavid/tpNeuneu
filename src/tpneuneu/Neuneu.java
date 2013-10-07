@@ -13,8 +13,6 @@ public abstract class Neuneu extends Mangeable{
   protected int posX;
   protected int posY;
   protected static int nameId=-1;
-
-
   
 
   
@@ -80,7 +78,7 @@ public abstract class Neuneu extends Mangeable{
   public void seReproduire() {
   }
 
-  public abstract void seDeplacer(Loft loft);
+  public abstract int seDeplacer(Loft loft);
   
        /**
        * Prevents out of bound for posX and posY
@@ -104,34 +102,82 @@ public abstract class Neuneu extends Mangeable{
   /**
    * 
    */
-  public Neuneu plusProcheVoisin(Loft loft) {
-      int i=0;
+  public int plusProcheVoisin(Loft loft) {
+ int i=0;
+      int foodFound = 0;
       
       do { 
           for (int m=-1; m<=1; m+=2){
               for (int n=-1; n<=1; n=+2){
-                    for (Mangeable element : loft.plateau[this.posX+i*m][this.posY+i*n].listPresence)
+                  /**
+                   * Take into account the bords effects !
+                   */
+                  int valeurX =this.posX+i*m;
+                  int valeurY =this.posY+i*m;
+                  if (this.posX+i*m>=20)
+                      valeurX = 19;
+                   if (this.posX+i*m<0)
+                       valeurX = 0;
+                   if (this.posY+i*m>=20)
+                      valeurY = 19;
+                   if (this.posY+i*m<0)
+                       valeurY = 0;
+                   
+                    for (Mangeable element : loft.plateau[valeurX][valeurY].listPresence)
                           if(element instanceof Neuneu) {
-                              return (Neuneu) element;
+                              ((Neuneu) this).posX = ((Neuneu) element).posX;
+                              ((Neuneu) this).posY = ((Neuneu) element).posY;
+                              return 1;
                           }
               }
           }
-      } while (true);
+          i++;
+      } while (i<10 && foodFound==0);
+      
+      if(foodFound==1){
+        //We get off the while if no close match of food so by default he moves like an erratique
+        ((Neuneu) this).seDeplacer(loft);
+      }
+      return 1;
   }
 
-  public Nourriture plusProcheNourriture(Loft loft) {
+  public int plusProcheNourriture(Loft loft) {
       int i=0;
+      int foodFound = 0;
       
       do { 
           for (int m=-1; m<=1; m+=2){
               for (int n=-1; n<=1; n=+2){
-                    for (Mangeable element : loft.plateau[this.posX+i*m][this.posY+i*n].listPresence)
+                  /**
+                   * Take into account the bords effects !
+                   */
+                  int valeurX =this.posX+i*m;
+                  int valeurY =this.posY+i*m;
+                  if (this.posX+i*m>=20)
+                      valeurX = 19;
+                   if (this.posX+i*m<0)
+                       valeurX = 0;
+                   if (this.posY+i*m>=20)
+                      valeurY = 19;
+                   if (this.posY+i*m<0)
+                       valeurY = 0;
+                   
+                    for (Mangeable element : loft.plateau[valeurX][valeurY].listPresence)
                           if(element instanceof Nourriture) {
-                              return (Nourriture) element;
+                              ((Neuneu) this).posX = ((Nourriture) element).posX;
+                              ((Neuneu) this).posY = ((Nourriture) element).posY;
+                              return 1;
                           }
               }
           }
-      } while (true);
+          i++;
+      } while (i<10 && foodFound==0);
+      
+      if(foodFound==1){
+        //We get off the while if no close match of food so by default he moves like an erratique
+        ((Neuneu) this).seDeplacer(loft);
+      }
+      return 1;
   }
   
 

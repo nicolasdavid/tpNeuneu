@@ -31,19 +31,18 @@ public class Erratique extends Neuneu {
       this.sexe=(int)Math.random()*2;
       jc.addDrawable(this);
   }
+  
   @Override
-  public void seDeplacer(Loft loft) {
+  public int seDeplacer(Loft loft) {
+ 
       this.posX+=(int)(Math.random()*6)-3;      
       this.posY+=(int)(Math.random()*6)-3;
      
-
       //check no border exception !
       this.checkBords(20,20);
       
       this.niveau-=10;
-      /**
-       * on va appeler la fonction majpresence en dehors de cette fonction
-       */
+      return 1; //need the return statement for the Mangeable
   }
   
   	public void draw(Graphics g) {

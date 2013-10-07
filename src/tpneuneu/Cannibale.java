@@ -18,15 +18,23 @@ public class Cannibale extends Vorace {
      super(a, b,color, pos,dim, jc);
      this.name="Cannibale"+this.nameId;
     }
-    /*
-  @Override
-  public void manger(Mangeable repas) {
-  }*/
 
-  @Override
-  public void seDeplacer(Loft loft) {
-  }
+    /**
+     *
+     * @param loft
+     */
+    @Override
+     public int seDeplacer(Loft loft) {
+        this.plusProcheVoisin(loft);
+
+        //check no border exeption !
+        this.checkBords(20,20);
+
+        this.niveau-=10;
+        return 1; //needed for some methods
+      }
   
+    @Override
    public void manger(LinkedList<Mangeable> repas) {
           /**
          * @var bouffeInt the number of elements in the ListePresence
@@ -51,6 +59,8 @@ public class Cannibale extends Vorace {
             }
         }
   }
+   
+
      	public void draw(Graphics g) {
                 if(niveau==0){
 		Color c = g.getColor();
