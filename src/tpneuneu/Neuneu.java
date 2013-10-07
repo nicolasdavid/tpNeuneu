@@ -3,8 +3,8 @@ package tpneuneu;
 import graphisme.JCanvas;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Graphics;
 import java.awt.Point;
+import java.util.LinkedList;
 
 public abstract class Neuneu extends Mangeable{
 
@@ -46,27 +46,52 @@ public abstract class Neuneu extends Mangeable{
    }; 
     
     
-  public void manger(Mangeable repas) {
-      if (repas instanceof Neuneu) { //if eat a Neuneu
-          repas.setNiveau(0);
-          this.setNiveau(100); //set energie of neuneu eaten to 0 (as dead) and to 100 for the eater
-      }
-      else{ //if eat a nourriture
-          if(repas.niveau+this.niveau>100){
-                repas.setNiveau(100-repas.niveau+this.niveau); //set new niveau
-                this.setNiveau(100); //Neuneu has full energy
-          }
-          else{
-              this.setNiveau(this.niveau+repas.niveau);  
-              repas.setNiveau(0); //no more food               
-          }
-      }
+  public void manger(LinkedList<Mangeable> repas) {
+        int bouffeInt = repas.size();
+        
+        if (bouffeInt > 0){
+            int intABouffer=0, pasManger=0;
+            //Case of none cannibale so we search the first not neuneu in ListePresence
+                while (intABouffer<bouffeInt && repas.get(intABouffer) instanceof Neuneu){
+                    intABouffer++;
+                }
+                if (intABouffer >= bouffeInt){ //no Nourriture, only Neuneu on the case so skip the manger function
+                    pasManger = 1;
+                }
+              
+            if (pasManger==0){
+                //if eat a nourriture
+                if(repas.get(intABouffer).niveau+this.niveau>100){
+                      repas.get(intABouffer).setNiveau(100-repas.get(intABouffer).niveau+this.niveau); //set new niveau
+                      this.setNiveau(100); //Neuneu has full energy
+                }
+                else{
+                    this.setNiveau(this.niveau+repas.get(intABouffer).niveau);  
+                    repas.get(intABouffer).setNiveau(0); //no more food           
+                }
+            }   
+        }
   }
  
   public void seReproduire() {
   }
 
-  public abstract void seDeplacer();
+  public abstract void seDeplacer(Loft loft);
+  
+       /**
+       * Prevents out of bound for posX and posY
+       */
+  public void checkBords(int maxX, int maxY){
+      if (this.posX>=maxX) 
+          this.posX=maxX-1;
+      if (this.posX<0)
+          this.posX=0;
+      
+      if (this.posY>=maxY)
+          this.posY=maxY-1;
+      if (this.posY<0)
+          this.posY=0;
+  } 
 
   public void majPresence(Case c) {
       c.listPresence.add((Mangeable)this);
