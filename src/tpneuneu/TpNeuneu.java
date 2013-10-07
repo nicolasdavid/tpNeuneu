@@ -80,7 +80,7 @@ public class TpNeuneu {
 
                     //we call the method to make neuneu eat
                      joueur.manger(loft.plateau[c][d].listPresence);
-                     joueur.seReproduire(loft);
+                     //joueur.seReproduire(loft);
 
 
                     //we populate a list of Nourriture and Neuneu which are dead in the new case

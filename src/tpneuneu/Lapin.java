@@ -38,7 +38,7 @@ public class Lapin extends Neuneu {
         } 
       }
       
-      for(int i=0 ;i<Math.abs(this.posY-anciennePosY); i++){ //the lapin moves only in Y Y.
+      for(int i=0; i<Math.abs(this.posY-anciennePosY); i++){ //the lapin moves only in Y Y.
         if(this.posY-anciennePosY>=0){
             //we call the method to make neuneu eat
              this.manger(loft.plateau[anciennePosX][anciennePosY+i].listPresence);
