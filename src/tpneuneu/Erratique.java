@@ -20,8 +20,8 @@ public class Erratique extends Neuneu {
 
     protected JCanvas jcanvas;
     
-  public Erratique(int a, int b, Point pos, Dimension dim, JCanvas jc){
-      super(Color.RED,pos,dim,jc);
+  public Erratique(int a, int b, Color color, Point pos, Dimension dim, JCanvas jc){
+      super(color,pos,dim,jc);
       
       this.nameId++;
       this.name="Erratique"+this.nameId;

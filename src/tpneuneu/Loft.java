@@ -1,6 +1,7 @@
 package tpneuneu;
 
 import graphisme.JCanvas;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Point;
 import java.util.LinkedList;
@@ -47,16 +48,16 @@ public class Loft {
                         */
                         switch(type){
                             case 0 :
-                                n = new Erratique(k,l, new Point(k,l), new Dimension(5,5),jc);
+                                n = new Erratique(k,l, Color.RED, new Point(k,l), new Dimension(5,5),jc);
                                 break;
                             case 1 :
-                                n = new  Vorace(k,l, new Point(k,l), new Dimension(5,5),jc);
+                                n = new  Vorace(k,l,Color.MAGENTA, new Point(k,l), new Dimension(5,5),jc);
                                 break;
                             case 2 :
-                                n = new  Cannibale(k,l,new Point(k,l), new Dimension(5,5),jc);
+                                n = new  Cannibale(k,l,Color.BLACK,new Point(k,l), new Dimension(5,5),jc);
                                 break;
                             default:
-                                n = new  Lapin(k,l, new Point(k,l), new Dimension(5,5),jc);
+                                n = new  Lapin(k,l,Color.YELLOW, new Point(k,l), new Dimension(5,5),jc);
                                 break;
                         }
                         /**
