@@ -32,7 +32,7 @@ public class Cannibale extends Vorace {
          */
         int bouffeInt = repas.size();
         
-        if (bouffeInt > 0){ //if there is more than 1 Mangeable in the case (more than the neuneu recently moved)
+        if (bouffeInt > 1){ //if there is more than 1 Mangeable in the case (more than the neuneu recently moved)
             int intABouffer=0;
                 
             if (repas.get(intABouffer) instanceof Neuneu) { //if eat a Neuneu

@@ -52,7 +52,7 @@ public abstract class Neuneu extends Mangeable{
          */
         int bouffeInt = repas.size();
         
-        if (bouffeInt > 0){ //if there is more than 1 Mangeable in the case (more than the neuneu recently moved)
+        if (bouffeInt > 1){ //if there is more than 1 Mangeable in the case (more than the neuneu recently moved)
             int intABouffer=0, pasManger=0;
                 //Case of none cannibale so we search the first not neuneu in ListePresence
                 //we do a while to have the first Mangeable different from a Neuneu (not cannibale !)
