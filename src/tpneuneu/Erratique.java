@@ -37,7 +37,7 @@ public class Erratique extends Neuneu {
       this.posY+=(int)(Math.random()*6)-3;
      
 
-      //check no border exeption !
+      //check no border exception !
       this.checkBords(20,20);
       
       this.niveau-=10;
