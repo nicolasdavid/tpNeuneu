@@ -73,8 +73,7 @@ public class TpNeuneu {
                 int d = joueur.getPosY();
                 joueur.majPresence(loft.plateau[c][d]);
 
-                //we decided what is going to eat for the neuneu
-               
+                //we call the method to make neuneu eat
                  joueur.manger(loft.plateau[c][d].listPresence);
 
                

@@ -27,20 +27,24 @@ public class Cannibale extends Vorace {
   }
   
    public void manger(LinkedList<Mangeable> repas) {
+          /**
+         * @var bouffeInt the number of elements in the ListePresence
+         */
         int bouffeInt = repas.size();
         
-        if (bouffeInt > 0){
+        if (bouffeInt > 0){ //if there is more than 1 Mangeable in the case (more than the neuneu recently moved)
             int intABouffer=0;
                 
             if (repas.get(intABouffer) instanceof Neuneu) { //if eat a Neuneu
                 repas.get(intABouffer).setNiveau(0);
                 this.setNiveau(100); //set energie of neuneu eaten to 0 (as dead) and to 100 for the eater
             }
-            else if(repas.get(intABouffer).niveau+this.niveau>100){ //if eat a nourriture
-                  repas.get(intABouffer).setNiveau(100-repas.get(intABouffer).niveau+this.niveau); //set new niveau
-                  this.setNiveau(100); //Neuneu has full energy
+            //if eat a nourriture
+            else if(repas.get(intABouffer).niveau+this.niveau>100){ //if eating food would make the niveau >100 for the neuneu
+                      repas.get(intABouffer).setNiveau(100-repas.get(intABouffer).niveau+this.niveau); //set new niveau
+                      this.setNiveau(100); //Neuneu has full energy
             }
-            else{
+            else{ //if food.niveau+neuneu.niveau<=100 so will eat totaly the nourriture !
                 this.setNiveau(this.niveau+repas.get(intABouffer).niveau);  
                 repas.get(intABouffer).setNiveau(0); //no more food           
             }
