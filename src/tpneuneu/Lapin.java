@@ -8,8 +8,8 @@ import java.awt.Point;
 
 public class Lapin extends Neuneu {
     
-  public Lapin(int a, int b, Point pos, Dimension dim, JCanvas jc){
-      super(Color.RED,pos,dim,jc);
+  public Lapin(int a, int b,Color color, Point pos, Dimension dim, JCanvas jc){
+      super(color,pos,dim,jc);
       
       this.nameId++;
       this.name="Lapin"+this.nameId;
