@@ -54,22 +54,30 @@ public class TpNeuneu {
                 int d = joueur.getPosY();
                 joueur.majPresence(loft.plateau[c][d]);
 
+                //we decided what is going to eat for the neuneu
+               int bouffeInt = loft.plateau[c][d].listPresence.size();
+               if (bouffeInt > 0){
+                   joueur.manger((Mangeable) loft.plateau[c][d].listPresence.get(0));
+               }
+               
                 //we populate a list of Nourriture and Neuneu which are dead in the new case
                 for(Mangeable element : loft.plateau[c][d].listPresence){
                     if ((int)element.niveau == 0){
                        aSupp.add((Mangeable)element);
+                       System.out.println(element.getClass()+" killed");
                     }
                 }
                 //we remove those elements from the new case
                 for(Mangeable element : aSupp){
                     loft.plateau[c][d].listPresence.remove(element);
                 }
-
+                //FIXIT We displaced brutally the neuneu in the display no to see them anymore 
                if (joueur.niveau==0){
                        neuneuSupp.add((Neuneu)joueur);
                        joueur.setPosX(1000);
                        joueur.setPosY(1000);
                     }
+               
                 //display is refreshed
                 fen.repaint();
                 }
