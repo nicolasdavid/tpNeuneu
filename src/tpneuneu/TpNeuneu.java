@@ -59,6 +59,12 @@ public class TpNeuneu {
                 int d = joueur.getPosY();
                 joueur.majPresence(loft.plateau[c][d]);
 
+                //we decided what is going to eat for the neuneu
+               int bouffeInt = loft.plateau[c][d].listPresence.size();
+               if (bouffeInt > 0){
+                   joueur.manger((Mangeable) loft.plateau[c][d].listPresence.get(0));
+               }
+               
                 //we populate a list of Nourriture and Neuneu which are dead in the new case
                 for(Mangeable element : loft.plateau[c][d].listPresence){
                     if ((int)element.niveau == 0){
