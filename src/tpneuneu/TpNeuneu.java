@@ -56,7 +56,7 @@ public class TpNeuneu {
                 aSupp = new LinkedList<>();
                 //timer
                 try {
-                    Thread.sleep(100);
+                    Thread.sleep(10);
                 } catch (InterruptedException e){
                     e.printStackTrace();
                 }
@@ -83,14 +83,14 @@ public class TpNeuneu {
                        aSupp.add((Mangeable)element);
                        System.out.println(element.getClass()+" killed");
                        if (element instanceof Neuneu){
-                            neuneuSupp.add((Neuneu)joueur);
+                            neuneuSupp.add((Neuneu)element);
                             comptMort++;
                             if (25+((int)comptMort/2)>50){
                                 comptRangeeMort++;
                                 comptMort=0;
                             }
-                            joueur.setPosX(25+((int)comptMort/2));
-                            joueur.setPosY(comptRangeeMort);
+                            (Neuneu) element.setPosX(25+((int)comptMort/2));
+                            (Neuneu) element.setPosY(comptRangeeMort);
                             fen.repaint();
                        }
                        else if (element instanceof Nourriture){
