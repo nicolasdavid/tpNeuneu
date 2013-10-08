@@ -3,6 +3,8 @@ tpNeuneu
 
 Second TP of Object - The loft and the Neuneus -
 
+Authors : Nicolas DAVID and Sébastien COHENDET
+
 Majors functionnalities :
 
 - food is at the bottom of each case wheras neuneu are at the top
